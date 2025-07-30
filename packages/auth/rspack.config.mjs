@@ -53,6 +53,11 @@ export default env => {
         enabled: mode === 'production',
         privateKeyPath: path.join('..', '..', 'code-signing.pem'),
       }),
+      new Repack.plugins.HermesBytecodePlugin({
+        enabled: mode === 'production',
+        test: /\.bundle$/,
+        exclude: /index\.bundle$/
+      }),
       // silence missing @react-native-masked-view optionally required by @react-navigation/elements
       new rspack.IgnorePlugin({
         resourceRegExp: /^@react-native-masked-view/,
