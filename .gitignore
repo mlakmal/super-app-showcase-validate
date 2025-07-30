@@ -10,8 +10,8 @@ build/
 .idea/
 
 # Code Signing
-code-signing.pem
-code-signing.pem.pub
+#code-signing.pem
+#code-signing.pem.pub
 
 # mprocs
 mprocs.log
